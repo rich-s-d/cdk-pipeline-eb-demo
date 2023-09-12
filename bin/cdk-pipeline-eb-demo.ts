@@ -7,7 +7,7 @@ import * as AWS from "aws-sdk";
 const app = new cdk.App();
 
 // Create an AWS Secrets Manager client
-const secretsManager = new AWS.SecretsManager({ region: "us-west-1" }); // Specify the appropriate region
+const secretsManager = new AWS.SecretsManager({ region: "eu-west-1" }); // Specify the appropriate region
 
 // Fetch the AWS account ID from Secrets Manager
 secretsManager.getSecretValue({ SecretId: "AWSAccountID" }, (err: any, data: any) => {
@@ -25,3 +25,5 @@ secretsManager.getSecretValue({ SecretId: "AWSAccountID" }, (err: any, data: any
 
   app.synth();
 });
+
+//TODO: set up a role in aws, then enter credentials in the cli using aws configure, then npx cdk bootstrap aws://ACCOUNT-NUMBER/REGION should run without a credentials exception.
