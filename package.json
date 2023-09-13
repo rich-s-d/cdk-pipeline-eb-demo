@@ -246,6 +246,9 @@
   "scripts": {
     "start": "node app.js"
   },
+  "engines": {
+    "node": "18.17.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
